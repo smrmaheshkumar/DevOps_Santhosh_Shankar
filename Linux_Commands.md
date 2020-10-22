@@ -1,5 +1,5 @@
-LINUX COMMANDS
-File Commands: 
+# LINUX COMMANDS
+## File Commands: 
 
 ls – directory listing
 
@@ -41,7 +41,7 @@ tail file – output the last 10 lines of file
 
 tail -f file – output the contents of file as it grows, starting with the last 10 lines
 
- Process Management
+## Process Management
 
 ps – display your currently active processes
 
@@ -57,7 +57,7 @@ fg – brings the most recent job to foreground
 
 fg n – brings job n to the foreground
 
-File Permissions
+## File Permissions
 
 chmod octal file – change the permissions of file to octal, which can be found separately for user, group and world by adding:
 
@@ -77,7 +77,7 @@ For more options, see man chmod.
 
  
 
-SSH
+## SSH
 
 ssh user@host – connect to host as user
 
@@ -135,7 +135,7 @@ which app – show which app will be run by default
 
  
 
-Compression
+## Compression
 
 tar cf file.tar files – create a tar named
 
@@ -145,13 +145,13 @@ tar xf file.tar – extract the files from file.tar
 
 tar czf file.tar.gz files – create a tar with
 
-Gzip compression
+## Gzip compression
 
 tar xzf file.tar.gz – extract a tar using Gzip
 
 tar cjf file.tar.bz2 – create a tar with Bzip2
 
-compression
+## compression
 
 tar xjf file.tar.bz2 – extract a tar using Bzip2
 
@@ -165,7 +165,7 @@ file
 
  
 
-Network
+## Network
 
 ping host – ping host and output results
 
@@ -181,7 +181,7 @@ wget -c file – continue a stopped download
 
  
 
-###Installation
+## Installation
 
 Install from source:
 
@@ -197,7 +197,7 @@ rpm -Uvh pkg.rpm – install a package (RPM)
 
  
 
-###Shortcuts
+## Shortcuts
 
 Ctrl+C – halts the current command
 
