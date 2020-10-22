@@ -34,7 +34,7 @@ docker images and containers stored under /var/lib/docker
 docker  run -d -t --name <name> --hostname <container_hostname> <image_name> 
 example: docker run -d -t --name nginxserver --hostname nginxpod nginx
  
-docker rm <contaienr> 
+docker rm <container> 
 ```
 
 ### Port forwarding 
