@@ -13,7 +13,7 @@
 •	Docker Registry	Storage place for images
 
 
-Docker Installation:
+## Docker Installation:
 
 $ yum install docker –y
 
@@ -31,7 +31,7 @@ $ docker ps 			 	Shows only active containers
 
 $ docker ps –a 		 	Shows stopped containers including active
 
-Running Containers In Attached Mode:
+## Running Containers In Attached Mode:
 
 $ docker run –it myimage  	we will go inside the container
 
@@ -46,7 +46,7 @@ To exit from the container there are two ways
 2)	ctrl+p   ctrl+q 	 	container will active after exit
 
 
-Stop the Running Containers:
+## Stop the Running Containers:
 
 $ docker stop container name or id
 
@@ -56,7 +56,8 @@ $ docker rm –f container id or name 	 	Force Remove
 
 $ docker start container name or id   		Start the container
 
-Running Container in Detached mode:
+
+## Running Container in Detached mode:
 
 $ docker run –itd myimage
 
