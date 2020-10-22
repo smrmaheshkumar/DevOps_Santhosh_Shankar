@@ -1,0 +1,6 @@
+#grep -i likhitha sample
+#To find the word
+#grep -i -n likhitha sample
+#List word with line number
+#grep -i -n -c -v likhitha sample
+
