@@ -1,15 +1,17 @@
 # VINAYAKA                                                            
 
 ## DevOps:	
-	DevOps is a set of practices that combine software development and IT Operations. It aims to shorten the systems development life cycle and provides continuous delivery with high quality software.
+DevOps is a set of practices that combine software development and IT Operations. It aims to shorten the systems development life cycle and provides continuous delivery with high quality software.
 
 ## GIT Architecture:	
            
 # Description:
 In git we have two repositories, Local repository and Remote repository. Remote repository is also called as central server where all the project code is kept and we create a local repo in our local workstation. Every individual user has their local workstation.
 So local repository resides on the local workstation. From remote we will get a copy by using git clone and git pull commands. Initially we will get a copy from Remote repo which is nothing but a local repository.
+
 The working directory is the folder where you are currently working on your Git project. You start with a working directory where all your files are stored. Then add your files to the staging area where ideally ready to connect your files back to the main branch on your Git project. 
 Once that’s done, you would want to push all the changes to a local repository where it will commit those files and make them ready for synchronization with the service. Then push your services out to the remote repository. An example of a remote repository is GitHub. 
+
 Later when you want to update your code, you can pull the latest changes from the remote repository so that your copy of the code is always the newest version of the software that the rest of the team is working on. One of the things that you can do is, as you are working on new features within the project, you can create branches. You can merge those branches with the main line code which will ensure that your code is of the highest quality and allows you to add new features to it without breaking the core code. 
 
 ## Git Configuration:
@@ -114,17 +116,17 @@ $ git branch –d production 	 	Delete in Local
 $ git branch –D production 	 	Force Delete
 $ git push origin production - - delete 	   	Delete in Remote Repo
 
-Deleting Files Along with the Commits:
+## Deleting Files Along with the Commits:
 $ git reset abcdefg - - hard
 $ git push –f origin master  Force Push
 
-Conflicts In Git:
+## Conflicts In Git:
 To remove the conflicts in the Git. First remove the unwanted lines in the files.
 $ git add .
 $ git commit –m “merge”
 $ git push –u origin master
 
-Git Stash:
+## Git Stash:
 Temporarily saves the file without pushing and we can come back and we can use it.
      
 File1 file2 file3
@@ -134,35 +136,36 @@ File1 untracked
 $ git stash  File1 will be moved to the temp
 $ git status
 Working tree clean
-Git Stash Pop:
+
+## Git Stash Pop:
 $ git stash list
 stash@{0}: WIP on test
 $ git stash pop stash@{0}  It will clear the stash. After this  it is not available here.
 
-Git Stash Apply:
+## Git Stash Apply:
 $ git stash apply stash@{0}
 $ git stash list [Here stash is available]
 
-Partial Stash:
+## Partial Stash:
 To stash the particular file, we will use the below command
 $ git stash –p
 It will ask file1 or file2 by y (or) n
 $ git show stash@{0}  Show details of stash
 
-Delete The Stash:
+## Delete The Stash:
 $ git stash clear 			 	All stashes will clear
 $ git stash drop stash@{1} 	 	Particular stash will delete
 
-Git Reset:
+## Git Reset:
 Removes changes from staging area
 $ git reset HEAD file.txt
 
-Git Clone:
+## Git Clone:
 $ git clone https://
 
-Git Pull:
+## Git Pull:
 $ git pull https://  Updates from central Repo
 
-Git Fetch:
+## Git Fetch:
 $ git fetch origin  Just show changes but git pull download the changes
 
