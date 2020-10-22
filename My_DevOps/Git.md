@@ -16,11 +16,17 @@ Later when you want to update your code, you can pull the latest changes from th
 
 ## Git Configuration:
 $ yum install git –y
+
 $ git - - version
+
 $ git config - - global user.name “smr.maheshkumar”
+
 $ git config - - global user.email “smr.maheshkumar@gmail.com”
+
 To check above configuration:
+
 $ git config - - global - - list
+
 $ cat ~/.gitconfig
 
 ## Jenkins GitHub Integration
