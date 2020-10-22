@@ -3,9 +3,9 @@
 ## DevOps:	
 DevOps is a set of practices that combine software development and IT Operations. It aims to shorten the systems development life cycle and provides continuous delivery with high quality software.
 
-## GIT Architecture:	
+# GIT Architecture:	
            
-# Description:
+## Description:
 In git we have two repositories, Local repository and Remote repository. Remote repository is also called as central server where all the project code is kept and we create a local repo in our local workstation. Every individual user has their local workstation.
 So local repository resides on the local workstation. From remote we will get a copy by using git clone and git pull commands. Initially we will get a copy from Remote repo which is nothing but a local repository.
 
