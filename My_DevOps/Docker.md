@@ -31,6 +31,7 @@ $ docker ps 		- 	Shows only active containers
 
 $ docker ps –a 		- 	Shows stopped containers including active
 
+
 ## Running Containers In Attached Mode:
 
 $ docker run –it myimage - 	we will go inside the container
@@ -73,9 +74,11 @@ $ docker attach container id or name
 
 $ docker exec –it container name or id /bin/bash
 
+
 ## Removing docker images:
 
 $ docker rmi myimage
+
 
 ## Docker Volumes
 
@@ -95,6 +98,7 @@ $ docker volume inspect vol1	-	Inpects the vol1
 $ cd /var/lib/docker/volumes/vol1/_data -  Location of docker volume
 
 [root@vol1_data]#   -  Entered into the docker volume
+
 
 ## Attaching Volumes to the containers:
 
@@ -207,7 +211,7 @@ $ docker inspect container-id  Inspects container
 
 $ docker attach container
 
-shell@]# ping 172.x.x.x.x  ip address
+shell@]# ping 172.x.x.x.x - ip address
 
 Containers with same bridge network will communicate with each other. Docker containers can communicate with each other through only ip address but not names.
 
