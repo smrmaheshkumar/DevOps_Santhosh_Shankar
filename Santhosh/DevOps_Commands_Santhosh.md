@@ -179,16 +179,21 @@ Copy the ip address and paste it in the browser with port :8000. We will get the
 	  ?>
 
 After this we have to build the image
+	
 	$ docker build –t myimage .
 
 It will pull the base image php and also it will pull our image. After this we will run the container with this image.
+	
 	$ docker run –d –p 8000:80 myimage 
 
 To push this images into our DockerHub account:
+	
 	$ docker login
+	
 	$ docker tag myimage:latest smrmaheshkumar/myimage:latest
 
 Now it will form another image with smrmaheshkumar/myimage:latest. To push this image into our account.
+	
 	$ docker push smrmaheshkumar/myimage:latest
 
 
