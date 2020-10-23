@@ -223,32 +223,46 @@ Now it will form another image with smrmaheshkumar/myimage:latest. To push this 
 	$ docker rm bcdakhbvkad –f
 
 
+
+
+
 # Docker Swarm       
 
 ### Starting Docker Swarm:
+
 	$ docker swarm init
 It will give one command as a master to join as a worker. Paste that command in two another instances so that the remaining two instances will join as a workers.
+	
 	$ docker node ls		# list out all the nodes
+	
 	$ docker network ls		# list all the networks
- 	$ docker service ls		# list all the services with replica
+ 	
+	$ docker service ls		# list all the services with replica
+	
 	$ docker service ps hksbvkh	# shows ip address
 
 It will give two networks docker-gwbridge and ingress
 
 ## To create a docker service:
+	
 	$ docker service create –p 8000:80 –name mynginxsvc  nginx
+	
 	$ docker service create –p 8000:80 –name mynginxsvc  nginx
 
 ## To scale up the containers:
+	
 	$ docker service scale mynginx=5
 
 ## To remove docker service:
+	
 	$ docker service rm mynginx
 
 ## To drain the node:
+	
 	$ docker node update –availability drain ip-172-31-47-55
 
 ## To active the node:
+	
 	$ docker node update –availability active ip-172-31-47-55
 -p
 
