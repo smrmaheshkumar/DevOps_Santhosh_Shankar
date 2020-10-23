@@ -159,14 +159,14 @@ Copy the ip address and paste it in the browser with port :8000. We will get the
 
 ## Creation of Docker Images in two types:
 
-# 1) Pulling Docker Images
+### 1) Pulling Docker Images
 	$ docker pull nginx		# Pulls the nginx image
 	$ docker pull nginx:1.12	# Pulls the version 1.12
 	$ docker pull tomcat 		# Pulls tomcat
 	$ docker inspect container id 	# It will show where container is running also it will show the ip address of the container
 	$ docker rm container id 	# To remove the container
 
-# 2) Docker Image Creation
+### 2) Docker Image Creation
 
 	$ vi Dockerfile
 	  FROM php:7.2-apache
