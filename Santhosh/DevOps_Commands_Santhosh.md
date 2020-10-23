@@ -69,6 +69,7 @@ It will show one conflict file which you edited. So remove the separator lines. 
  	$ git merge production          # Merges data from master to production
  	$ git push origin production    # Pushes data to production
 
+
 ## To delete the branch:
 	$ git branch –d production		# Delete in local
 	$ git branch –D production 		# Delete force
