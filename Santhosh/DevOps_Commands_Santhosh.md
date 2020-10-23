@@ -1,20 +1,28 @@
 # DevOps
 
 ## DevOps:-
-DevOps is the combination of cultural philosophies, practices and tools that increases an organization’s ability to deliver applications and services at high velocity: evolving and improving products at a faster pace than organizations using traditional software development and infrastructure management processes. This speed enables organizations to better serve their customers and compete more effectively in the market.
+DevOps is the combination of cultural philosophies, practices and tools that increases an organization’s ability to deliver applications and services at high velocity: evolving and improving products at a faster pace than organizations using traditional software development and infrastructure management processes. 
+This speed enables organizations to better serve their customers and compete more effectively in the market.
 
 ## Git:-
 Git is a distributed version-control system for tracking changes in source code during software development. It is designed for coordinating work among programmers, but it can be used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows. Wikipedia
 
 ## To Setup the configuration:
-                     	$ git config - -global user.name “smrmaheshkumar”
-$ git config - -global user.email “smr.maheshkumar@gmail.com”
-To check the above status:
-$ git config - -global - -list
-Seeing Git’s user-based config file
-$ cat ~/.gitconfig
+
+	$ git config --global user.name “smrmaheshkumar”
+
+	$ git config --global user.email “smr.maheshkumar@gmail.com”
+
+## To check the above status:
+
+	$ git config --global --list
+
+	Seeing Git’s user-based config file
+
+	$ cat ~/.gitconfig
 
 ## Git Commands:
+
 ## Pushing to Github:
  	$ git init				: Initializes the git
  	$ git add filename or git add .
@@ -26,17 +34,19 @@ $ cat ~/.gitconfig
 
 ## Git Logs:
 	$ git log
-	$ git log - -oneline
+	$ git log --oneline
 	$ git log file1.txt
 	$ git show
-	$ git restore - -staged index.html	: bring back file from staging to working               directory
-	$ git rev-list - –all - –count – to see the commit counts
+	$ git restore --staged index.html	#bring back file from staging to working directory
+	$ git rev-list -–all -–count 		#to see the commit counts
 
 ## Removing file from WD & Local repository:
-	$ rm file.txt     		>     Removes from working directory
-	$ git rm about.html     >     Remove files from local repo as well as working directory
-	$ git ls-files			: to see the files in repository
+	$ rm file.txt     	#Removes from working directory
+	$ git rm about.html     #Remove files from local repo as well as working directory
+	$ git ls-files		#To see the files in repository
+
 If there is two readme file in local and github account. We will encounter an error. To resolve the issue please type the below command.
+
 	$ git pull origin master –allow-unrelated-histories
 
 ## Git Conflict:
