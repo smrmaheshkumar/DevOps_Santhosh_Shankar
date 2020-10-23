@@ -64,7 +64,7 @@ It will show one conflict file which you edited. So remove the separator lines. 
 
 ## To Create a Branch:
 	$ git branch –a              	# list all the branches in Git
-        $ git branch production         # Create a branch production
+	$ git branch production		# Create a branch production
 	$ git checkout production       # Switches from master to production
  	$ git merge production          # Merges data from master to production
  	$ git push origin production    # Pushes data to production
