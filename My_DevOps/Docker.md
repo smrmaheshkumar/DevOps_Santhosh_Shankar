@@ -6,11 +6,11 @@
 
 ## Docker Architecture:
 
-•Docker Client	Provides UI to Docker daemon
+•Docker Client		-	Provides UI to Docker daemon
 
-•Docker daemon 	To run command. Creating Images, containers etc
+•Docker daemon 		-	To run command. Creating Images, containers etc
 
-•Docker Registry	Storage place for images
+•Docker Registry	-	Storage place for images
 
 
 ## Docker Installation:
