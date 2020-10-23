@@ -192,63 +192,62 @@ Now it will form another image with smrmaheshkumar/myimage:latest. To push this 
 
 
 
-## Docker Network:
+# Docker Network:
 
-# Commands:
-	$ docker network ls		=		list out all the networks
+## Commands:
+	$ docker network ls		# list out all the networks
 
 ## Creating Docker Network:
-$ docker network create mybridge 	=	creates a network in the               name mybridge    
-$ docker network create mybridge1 	=	creates a network in the               name mybridge1
-	$ docker inspect container id 		=	shows the ip address
+	$ docker network create mybridge	# creates a network in the name mybridge    
+	$ docker network create mybridge1      	# creates a network in the name mybridge1
+	$ docker inspect container id 		# shows the ip address
 
-Run the Network with the container:
+## Run the Network with the container:
 	$ docker run –d –network=mybridge nginx
 
-Network will run with the nginx
+	Network will run with the nginx
 
-To create our own network:
+## To create our own network:
 	$ docker network create newnet –subnet=192.168.0.0/16
 
-To remove Network:
+## To remove Network:
 	$ docker network rm ajncdkjnvsbkjvd
 
-To remove the container:
+## To remove the container:
 	$ docker rm bcdakhbvkad –f
 
 
+# Docker Swarm       
 
-
-
-
-
-
-       Docker Swarm       
-Starting Docker Swarm:
+### Starting Docker Swarm:
 	$ docker swarm init
 It will give one command as a master to join as a worker. Paste that command in two another instances so that the remaining two instances will join as a workers.
-	$ docker node ls 		=  		list out all the nodes
-	$ docker network ls	=		list all the networks
- 	$ docker service ls		=		list all the services with replica
-	$ docker service ps hksbvkh	=	shows ip address
+	$ docker node ls		# list out all the nodes
+	$ docker network ls		# list all the networks
+ 	$ docker service ls		# list all the services with replica
+	$ docker service ps hksbvkh	# shows ip address
+
 It will give two networks docker-gwbridge and ingress
-To create a docker service:
+
+## To create a docker service:
 	$ docker service create –p 8000:80 –name mynginxsvc  nginx
 	$ docker service create –p 8000:80 –name mynginxsvc  nginx
-To scale up the containers:
+
+## To scale up the containers:
 	$ docker service scale mynginx=5
 
-To remove docker service:
+## To remove docker service:
 	$ docker service rm mynginx
-To drain the node:
+
+## To drain the node:
 	$ docker node update –availability drain ip-172-31-47-55
-To active the node:
+
+## To active the node:
 	$ docker node update –availability active ip-172-31-47-55
 -p
 
 
-
-					Ansible
+# Ansible
 Take 3 EC2 Instances
 change user to root user
 sudo -i
@@ -265,8 +264,6 @@ visudo
 add following line below to root user privilage
 ansibleuser ALL=(ALL) NOPASSWD: ALL
 
-
-
 vi /etc/ssh/sshd_config
 edit following line to yes
 PasswordAuthentication yes
@@ -278,39 +275,52 @@ Login with the following below
 ssh ansibleuser@172.225.58.51
 
 Open an EC2 instance with ansibleuser 
-Install ansible in the instance 
-yum install ansible
+
+## Install ansible in the instance 
+	$ yum install ansible
 It will give one command to install ansible. Install as per the process
 After this goto
-$ ssh ansibleuser@172.28.255.22 	
+	$ ssh ansibleuser@172.28.255.22 	
 it will ask password. To remove that generate one key as follow
-$ ssh-keygen
 
+	$ ssh-keygen
 Copy the id to both the servers
+
 $ ssh-copy-id ssh ansibleuser@172.28.255.22 
 
 Goto ansible location
+
 $ cd /etc/ansible              ls
+
 ansible.cfg hosts roles
 
 Set target users
+
 Vi hosts
+
 Give privileages
+
 [allmyservers]
+
 ansibleuser@12.55.225.12
+
 ansibleuser1@115.225.225.2
+
 Goto 
+
 [root@ip-172-22-32-1 ansible]# 
-Ping allmysevers
+
+## Ping allmysevers
 $ ansible –m ping allmyservers
 
 Installation of applications in the target servers
 $ ansible –m yum –a “name=docker state=present” allmyservers –b
 
-	Ansible Playbooks
+## Ansible Playbooks
 $ ansible –m ping allmyservers
 $ vi myplaybook.yml
-     - hosts: allmyservers
+  ---
+  - hosts: allmyservers
   become: true
   become_user: root
   vars:
@@ -335,93 +345,92 @@ $ vi myplaybook.yml
 
 $ vi index.html
 
-To check our playbook is correct or not
-$ ansible-playbook myplaybook.yml –syntax-check
+## To check our playbook is correct or not
+	$ ansible-playbook myplaybook.yml –syntax-check
 
-To ping all the servers
-Ansible –m ping allmyservers
- To run the playbook
+## To ping all the servers
+ansible –m ping allmyservers
+ 
+## To run the playbook
 $ ansible-playbook myplaybook.yml
 
 
 
-	Ansible Roles
+# Ansible Roles
 $ cd /etc/ansible       ls
  
-To initiate roles
-$ ansible-galaxy init myrole
+## To initiate roles
+	$ ansible-galaxy init myrole
 
-To install tree
-$ yum install tree
+## To install tree
+	$ yum install tree
 
 Edit roles in main.yml in vars, taks etc
 
-Run the roles
-$ ansible-playbook roleplaybook.yml
+## Run the roles
+	$ ansible-playbook roleplaybook.yml
 
-Command Module
+## Command Module
 $ ansible –m command –a “rm /var/www/html/index.html” allmyservers -b
 
 	Galaxy-Ansible.com
+
 ansible-galaxy install geerlingguy.java --roles-path=/etc/ansible/roles
+
 ansible-playbook roleplaybook.yml
 
 
+## Kubernetes
 
-
-
-
-	Kubernetes
 To start minikube
 $ minikube start
+
 To list out the nodes
 $ kubectl get nodes
 
 
-To run the pods
-$ kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4
---port=8080
+## To run the pods
+	$ kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
 If we want to run nginx replace nginx in image
-$ kubectl run hello-minikube --nginx=gcr.io/google_containers/echoserver:1.4
---port=80
+
+	$ kubectl run hello-minikube --nginx=gcr.io/google_containers/echoserver:1.4 --port=80
+
 To see the deployments (Like docker service ls)
-$ kubectl get deplyments
+	$ kubectl get deplyments
 
-To describe the deployments
-Kubectl describe deployments hello-minikube
-To see the details of the pods
-Kubectl describe pod hello-mimikube-hvfbskbvks-ggpz4
+## To describe the deployments
 
-Scalingup the pods
-$ kubectl scale –replica=5 deployments/hello-minikube
+	$ Kubectl describe deployments hello-minikube
 
-To drain
-$ kubectl get pods
-$ kubectl drain podname
+## To see the details of the pods
+
+	$ Kubectl describe pod hello-mimikube-hvfbskbvks-ggpz4
+
+## Scalingup the pods
+	$ kubectl scale –replica=5 deployments/hello-minikube
+
+## To Drain
+	$ kubectl get pods
+	$ kubectl drain podname
+
 Pods are in pending state. To uncordon it
-$ kubectl uncordon minikube
+	$ kubectl uncordon minikube
 
 Now see the activate status by doing
 $ kubectl get pods
 
-To delete the pods
-$ kubectl delete pods podname
-$ kubectl get pods
+## To delete the pods
+	$ kubectl delete pods podname
+	$ kubectl get pods
 
-Kubernetes can be managed by UI
+## Kubernetes can be managed by UI
 To get the dashboard
-$ minikube dashboard
+	$ minikube dashboard
 
 
-
-
-
-Replica Sets & Replication Controller:
+## Replica Sets & Replication Controller:
 By using yml we can create this
-# example my-rc.yaml file for creating a object based Replication Controller
-
-
-
+Example: my-rc.yaml file for creating a object based Replication Controller
 
 apiVersion: v1
 kind: ReplicationController
@@ -444,9 +453,10 @@ ports:
 - containerPort: 80
 
 # create resource(s)
-$ kubectl create -f my-rc.yaml
+	$ kubectl create -f my-rc.yaml
+
 replicationcontroller “nginx” created
 
 # Adding a Label
-$ kubectl label pods busybox-sleep new-label=new-busybox-sleep pod “busybox-sleep” labeled
+	$ kubectl label pods busybox-sleep new-label=new-busybox-sleep pod “busybox-sleep” labeled
 
