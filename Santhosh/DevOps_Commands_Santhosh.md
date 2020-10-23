@@ -24,137 +24,161 @@ Git is a distributed version-control system for tracking changes in source code 
 ## Git Commands:
 
 ## Pushing to Github:
- 	$ git init				: Initializes the git
+ 	$ git init
  	$ git add filename or git add .
   	$ git commit -m "first commit'
  	$ git remote add origin https://
  	$ git push -u origin master
 	$ git clone https://
-	$ git ls-files > shows file on localrepo
+	$ git ls-files 		# shows file on localrepo
 
 ## Git Logs:
 	$ git log
 	$ git log --oneline
 	$ git log file1.txt
 	$ git show
-	$ git restore --staged index.html	#bring back file from staging to working directory
-	$ git rev-list -–all -–count 		#to see the commit counts
+	$ git restore --staged index.html	# Bring back file from staging to working directory
+	$ git rev-list -–all -–count 		# To see the commit counts
 
 ## Removing file from WD & Local repository:
-	$ rm file.txt     	#Removes from working directory
-	$ git rm about.html     #Remove files from local repo as well as working directory
-	$ git ls-files		#To see the files in repository
+	$ rm file.txt     	# Removes from working directory
+	$ git rm about.html     # Remove files from local repo as well as working directory
+	$ git ls-files		# To see the files in repository
 
 If there is two readme file in local and github account. We will encounter an error. To resolve the issue please type the below command.
 
 	$ git pull origin master –allow-unrelated-histories
 
 ## Git Conflict:
+
 Changes in both local and repository makes conflict. To merge the files use the below command.
+
 	$ git pull
+
 Changes done in same file and changes of same file in remote repo. It will conflicts.
+	
 	$ git pull
+
 It will show one conflict file which you edited. So remove the separator lines. Issue resolved.
 
 
 ## To Create a Branch:
-  		 $ git branch –a                          :    list all the branches in Git
-              $ git branch production           :   Create a branch production
- 		 $ git checkout production       :   switches from master to production
- 		 $ git merge production            :   merges data from master to production
- 		 $ git push origin production   :   pushes data to production
+	$ git branch –a              	# list all the branches in Git
+        $ git branch production         # Create a branch production
+	$ git checkout production       # Switches from master to production
+ 	$ git merge production          # Merges data from master to production
+ 	$ git push origin production    # Pushes data to production
 
 ## To delete the branch:
-		$ git branch –d production	:  delete in local
-		$ git branch –D production 	: delete force
-		$ git push origin production –delete	:  delete in remote repo
+	$ git branch –d production		# Delete in local
+	$ git branch –D production 		# Delete force
+	$ git push origin production –delete	# Delete in remote repo
 
 ## Deleting files along with the commits:
 	$ git reset bdhbcks –hard
-	$ git push –f 				:  push forcefully
-
+	$ git push –f 				# Push forcefully
 
 ## EC2 Instance:-
-	An EC2 instance is a virtual server in Amazon's Elastic Compute Cloud (EC2) for running applications on the Amazon Web Services (AWS) infrastructure. AWS is a comprehensive, evolving cloud computing platform; EC2 is a service that allows business subscribers to run application programs in the computing environment.
+An EC2 instance is a virtual server in Amazon's Elastic Compute Cloud (EC2) for running applications on the Amazon Web Services (AWS) infrastructure. 
+AWS is a comprehensive, evolving cloud computing platform; EC2 is a service that allows business subscribers to run application programs in the computing environment.
 
 ## Git Bash:-
-Git Bash is an application for Microsoft Windows environments which provides an emulation layer for a Git command line experience. Bash is an acronym for Bourne Again Shell. A shell is a terminal application used to interface with an operating system through written commands.
+Git Bash is an application for Microsoft Windows environments which provides an emulation layer for a Git command line experience. 
+Bash is an acronym for Bourne Again Shell. A shell is a terminal application used to interface with an operating system through written commands.
 
 ## Putty:-
- 	PuTTY is a free and open-source terminal emulator, serial console and network file transfer application. It supports several network protocols, including SCP, SSH, Telnet, rlogin, and raw socket connection. It can also connect to a serial port. The name "PuTTY" has no official meaning. Wikipedia
+PuTTY is a free and open-source terminal emulator, serial console and network file transfer application. 
+It supports several network protocols, including SCP, SSH, Telnet, rlogin, and raw socket connection. 
+It can also connect to a serial port. The name "PuTTY" has no official meaning. Wikipedia
 
-### Jenkins    
+# JENKINS    
 
 ## Jenkins:-
-	Jenkins is a free and open source automation server. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery. It is a server-based system that runs in servlet containers such as Apache Tomcat. Wikipedia
+Jenkins is a free and open source automation server. 
+It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery. 
+It is a server-based system that runs in servlet containers such as Apache Tomcat. Wikipedia
 
 ## Jenkins Installation:-
 Create an EC2 instance and go through Putty or git bash.
 
-# Jenkins Installation:-
+## Jenkins Installation:-
 Go through Jenkins.io/download and select centos and copy two package commands and paste it in the terminal.
-	Yum install git –y
-	Yum install jenkins –y
-	rpm –qa jenkins                        =              to check the jenkins version
+	$ yum install git –y
+	$ yum install jenkins –y
+	$ rpm –qa jenkins 	# To check the jenkins version
+
 Java removal and installation of newer version:
-	yum remove java-1.7.0-openjdk
-	yum install java-1.8.0-openjdk
-	java -version
+	$ yum remove java-1.7.0-openjdk
+	$ yum install java-1.8.0-openjdk
+	$ java -version
+
 Service Jenkins:
-	service jenkins start
-	chkconfig jenkins on
-	service jenkins status
+	$ service jenkins start
+	$ chkconfig jenkins on
+	$ service jenkins status
+
 Getting Jenkins Homepage:
-	Copy the ip address of the EC2 instance and paste it in the browser like 3.171.22.32/8080. It will ask credentials to create. After the it will show the password location. Copy that link and paste it in putty.
-	cat /var/lib/jenkins/secrets/initialAdminPassword
-	After this we will get password and paste it in the browser. We will get the Jenkins Homepage.
+Copy the ip address of the EC2 instance and paste it in the browser like 3.171.22.32/8080. 
+It will ask credentials to create. After the it will show the password location. 
+Copy that link and paste it in putty.
+
+	$ cat /var/lib/jenkins/secrets/initialAdminPassword
+	
+After this we will get password and paste it in the browser. We will get the Jenkins Homepage.
 
 
-
-### Docker
+# Docker
 
 ## Docker:
-	Docker is a set of platform as a service products that uses OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. Wikipedia
-Docker installation:
-	Yum install docker –y 
-	Service docker start
-	Chkconfig docker on
+Docker is a set of platform as a service products that uses OS-level virtualization to deliver software in packages called containers. 
+Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. Wikipedia
+
+## Docker installation:
+	$ yum install docker –y 
+	$ Service docker start
+	$ Chkconfig docker on
 
 ## Commands:
-	docker ps     		           =        	List the containers running
-	docker ps –a 	           	= 	list all the containers including stopped
-	docker images  	            =     	list all the images
-	docker rm bkvbsk		=	remove container
-	docker rm fhsbv –f		=	remove container forcefully
-	docker rmi bcvnbc 		=	remove docker images
-Running Docker images with containers in two ways:
-1)	Running container in daemon mode. In this mode the container will run in disconnected mode.
-$ docker run –d tomcat
-2)	Running docker in port forwarding mode
-$ docker run –d –p 8000:8080 tomcat
-$ docker run –d –p 8001:80 nginx
+	# docker ps		# List the containers running
+	# docker ps –a 	        # List all the containers including stopped
+	# docker images  	# List all the images
+	# docker rm bkvbsk	# Remove container
+	# docker rm fhsbv –f	# Remove container forcefully
+	# docker rmi bcvnbc 	# Remove docker images
+
+### Running Docker images with containers in two ways:
+	1) Running container in daemon mode. In this mode the container will run in disconnected mode.
+	$ docker run –d tomcat
+
+	2) Running docker in port forwarding mode
+	$ docker run –d –p 8000:8080 tomcat
+	$ docker run –d –p 8001:80 nginx
+
 Copy the ip address and paste it in the browser with port :8000. We will get the tomcat running.
 
-## Creation of Docker imaging two types:
+## Creation of Docker Images in two types:
 
-# 1)	Pulling Docker Images
-docker pull nginx 			= 	pulls the nginx image
-docker pull nginx:1.12		=	pulls the version 1.12
-docker pull tomcat 		=	pulls tomcat
-docker inspect container id 	=	it will show where container is running also it will show the ip address of the container
-docker rm container id 	=	to remove the container
+# 1) Pulling Docker Images
+	$ docker pull nginx		# Pulls the nginx image
+	$ docker pull nginx:1.12	# Pulls the version 1.12
+	$ docker pull tomcat 		# Pulls tomcat
+	$ docker inspect container id 	# It will show where container is running also it will show the ip address of the container
+	$ docker rm container id 	# To remove the container
 
-# 2)	Docker image creation.
-$ vi Dockerfile
-FROM php:7.2-apache
-	COPY index.php .
-	EXPOSE 80
-$ vi index.php
-	<?php
-	echo “Hi Mahesh”
-	?>
+# 2) Docker Image Creation
+
+	$ vi Dockerfile
+	  FROM php:7.2-apache
+	  COPY index.php .
+	  EXPOSE 80
+
+	$ vi index.php
+	  <?php
+	  echo “Hi Mahesh”
+	  ?>
+
 After this we have to build the image
-$ docker build –t myimage .
+	$ docker build –t myimage .
 
 It will pull the base image php and also it will pull our image. After this we will run the container with this image.
 	$ docker run –d –p 8000:80 myimage 
