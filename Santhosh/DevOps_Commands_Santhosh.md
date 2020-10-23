@@ -269,30 +269,37 @@ It will give two networks docker-gwbridge and ingress
 
 # Ansible
 Take 3 EC2 Instances
+
 change user to root user
-sudo -i
+
+	$ sudo -i
 
 create a user named "ansibleuser"
-useradd ansibleuser
+
+	$ useradd ansibleuser
 
 set password for user "ansibleuser"
-passwd ansibleuser
+
+	$ passwd ansibleuser
 
 give privileges for the ansibleuser
-visudo
+
+	$ visudo
 
 add following line below to root user privilage
-ansibleuser ALL=(ALL) NOPASSWD: ALL
+	$ ansibleuser ALL=(ALL) NOPASSWD: ALL
 
-vi /etc/ssh/sshd_config
+	$ vi /etc/ssh/sshd_config
+
 edit following line to yes
-PasswordAuthentication yes
+	$ PasswordAuthentication yes
 
 you have to restart sshd service in machine
-service sshd restart
+	$ service sshd restart
 
 Login with the following below
-ssh ansibleuser@172.225.58.51
+
+	$ ssh ansibleuser@172.225.58.51
 
 Open an EC2 instance with ansibleuser 
 
