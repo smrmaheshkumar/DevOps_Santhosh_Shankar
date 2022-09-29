@@ -7,22 +7,18 @@ Linux Commands
 
 Git
 
-Maven & NPM
+Maven
 
 SonarQube
 
-JFROG
-
 Jenkins
 
-Docker
+Nexus
 
-Docker Swarm
+Docker
 
 Ansible
 
 Kubernetes
 
 Shell Scripting
-
-Python Scripting
