@@ -35,9 +35,13 @@ http://52.15.102.192:8080/github-webook
 
 ## Git Initial Commands from Adding To Push:
 $ git init
+
 $ git add .
+
 $ git commit –m “first commit”
+
 $ git remote add origin https://
+
 $ git push –u origin master 
 
 ## Git Logs:
